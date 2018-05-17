@@ -1,0 +1,11 @@
+<h3>Current User: <%= params[:name] %></h3>
+<p><strong>email:</strong> <%= @current_user[:email] %></p>
+<p><strong>interests:</strong> <%= @current_user[:interests].join(", ") %></p>
+<h4>Other Users: </h4>
+<ul>
+  <% @usernames.each do |name| %>
+    <% unless @user_sym == name %>
+      <li><a href="/user/<%= name %>"><%= name %></a></li>
+    <% end %>
+  <% end %>
+</ul>
